@@ -16,7 +16,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs=JobData::all();
+return view ('admin.job-list',compact('jobs'));
     }
 
     /**
@@ -45,6 +46,8 @@ class JobController extends Controller
              'date_line' => 'required|date',
              'published' => 'boolean',
              'category_id'=> 'required|integer|exists:categories,id',
+             'company_id'=> 'required|integer|exists:companies,id',
+
              'image' =>'required|mimes:png,jpg,jpeg|max:2048',
 
         ]);
@@ -60,9 +63,9 @@ class JobController extends Controller
      */
     public function show(string $id)
     {
-        $job=JobData::with('category')->findOrFail($id);
+        $job=JobData::with('company')->findOrFail($id);
     //  dd($job);
-     return view('admin.job_details', compact('job')); 
+     return view('admin.job-details', compact('job')); 
     }
 
     /**

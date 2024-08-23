@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\JobData;
 
 
 class PublicController extends Controller
@@ -34,9 +35,10 @@ class PublicController extends Controller
     {
         return view('public.job-list');
     }
-    public function jobdetails()
+    public function jobdetails(string $id)
     {
-        return view('public.job-detail');
+$job=JobData::with('company')->findOrFail($id);
+        return view('public.job-detail', compact('job'));
     }
     public function error()
     {

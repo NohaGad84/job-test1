@@ -49,7 +49,7 @@
 
               <div class="mb-4">
                 <p class="card-text">
-                  <span class="fw-bold">Job Nature</span> {{ $job->job_nature }}$
+                  <span class="fw-bold">Job Nature :</span> {{ $job->job_nature }}
                 </p>
               </div>
               <div class="mb-4">
@@ -65,30 +65,30 @@
 
               <div class="mb-4">
                 <p class="card-text">
-                  <span class="fw-bold">Qualifications:</span><br>{{ $job->qualifications }}
+                  <span class="fw-bold">Qualifications:</span><br>{{ $job->qualification}}
                 </p>
               </div>
               <div class="mb-4">
                 <p class="card-text">
-                  <span class="fw-bold">Location:</span><br>{{ $job->location }}
-                </p>
-              </div>
-               
-              <div class="mb-4">
-                <p class="card-text">
-                  <span class="fw-bold">salary From:</span><br>{{ $job->salary_from }}
-                </p>
-              </div>
-
-              <div class="mb-4">
-                <p class="card-text">
-                  <span class="fw-bold">Salary to:</span><br>{{ $job->salary_to }}
+                  <span class="fw-bold">Location:</span><br>{{ $job->location}}
                 </p>
               </div>
                
               <div class="mb-4">
                 <p class="card-text">
-                  <span class="fw-bold">Date Line:</span><br>{{ $job->date_line }}
+                  <span class="fw-bold">Salary From:</span><br>{{ $job->salary_from}}
+                </p>
+              </div>
+
+              <div class="mb-4">
+                <p class="card-text">
+                  <span class="fw-bold">Salary to:</span><br>{{ $job->salary_to}}
+                </p>
+              </div>
+               
+              <div class="mb-4">
+                <p class="card-text">
+                  <span class="fw-bold">Date Line:</span><br>{{ $job->date_line}}
                 </p>
               </div>
 
@@ -96,12 +96,12 @@
 
               <div class="mb-4">
                 <p class="card-text">
-                  <span class="fw-bold">responsabilities:</span><br>{{ $job->responsability }}
+                  <span class="fw-bold">Responsibilities:</span><br>{{ $job->responsability }}
                 </p>
               </div>
 
               <div class="text-md-end">
-                <a href="{{ route('cars.index') }}" class="btn mt-4 btn-primary text-white fs-5 fw-bold border-0 py-2 px-md-5">
+                <a href="{{ route('jobs.index') }}" class="btn mt-4 btn-primary text-white fs-5 fw-bold border-0 py-2 px-md-5">
                   Back to All Jobs
                 </a>
               </div>

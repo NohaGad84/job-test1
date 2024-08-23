@@ -47,17 +47,17 @@
               <td>{{Str::limit($job['description'],7)}}</td>
               <td>{{$job->category->category_name}}</td>
               <td>{{$job['published'] ? 'Yes':'No'}}</td>
-              <!-- <td><a href="{{route('jobs.edit',$job['id'])}}">Edit</a></td> -->
+              <td><a href="{{route('jobs.edit',$job['id'])}}">Edit</a></td>
               <td><a href="{{route('jobs.show',$job['id'])}}">Details</a></td>
 
-              <!-- <td>
+              <td>
               <a href="{{ route('jobs.destroy', $job->id) }}" onclick="event.preventDefault(); if (confirm('Are you sure?')) { document.getElementById('delete-form-{{ $job->id }}').submit(); }">Delete</a>
               <form id="delete-form-{{ $job->id }}" action="{{ route('jobs.destroy', $job->id) }}" method="POST" style="display: none;">
                @csrf
               @method('DELETE')
               
               </form>
-              </td> -->
+              </td>
 
             </tr>
             @endforeach

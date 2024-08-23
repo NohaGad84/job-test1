@@ -22,7 +22,6 @@ Route::group([
     Route::get('category','category')->name('category');
     Route::get('testimonial','testimonial')->name('testimonial');
     Route::get('job-list','joblist')->name('joblist');
-    Route::get('job-details','jobdetails')->name('jobdetails');
     
     Route::get('job-details/{id}','jobdetails')->name('jobdetails');
     Route::post('job-apply','jobApply')->name('apply_job');
@@ -69,5 +68,9 @@ Route::group(['prefix' =>'admin'], function(){
 
 
 // Admin/JobController
-Route::get('admin/job_details/{id}',[JobController::class,'show'])->name('show');
+Route::get('job/job-list',[JobController::class,'index'])->name('jobs.index');
+Route::get('job/edit/{id}',[JobController::class,'edit'])->name('jobs.edit');
+Route::delete('job/delete/{id}',[JobController::class,'destroy'])->name('jobs.destroy');
+
+Route::get('admin/job_details/{id}',[JobController::class,'show'])->name('jobs.show');
 // Admin/CategoryController
